@@ -1,0 +1,185 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+body{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(255, 145, 0);
+}
+.container{
+    height: 400px;
+    width: 400px;
+    display: flex;
+    align-items: flex-end;
+}
+.icon-image{
+    height: 4rem;
+    width: 4rem;
+    position: relative;
+    background-color: black;
+    border-radius: 50%;
+    margin-right: 3px;
+
+}
+.icon-image img{
+    position: absolute;
+    height: 95%;
+    width: 95%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    object-fit: cover;
+    border-radius: 50%;
+}
+.hover-image .layer{
+    position: absolute;
+    height: 100%;
+    width: 18.8rem;
+    border-radius: 20px;
+    transition: 0.5s;
+    box-shadow: 
+                inset -5px -5px 5px  rgba(0, 0, 0, 0.617),
+                inset 5px 5px 5px  rgba(14, 5, 5, 0.458);
+    opacity: 0;
+    border: 4px solid white;
+   
+}
+span{
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    color: rgb(10, 11, 11);
+}
+.icon-image:hover .hover-image .layer{
+    opacity: 1;
+    transition:  1s;
+    transition-delay: 1.5s;
+}
+.icon-image:hover .hover-image span{
+    transition-duration: 3s;
+    transform: translateY(-210px);
+}
+.icon-image:hover .hover-image pre{
+    transition: 4s;
+    opacity: 1;
+}
+.webcard{
+    background-color:#284490;
+   
+}
+.appcard{
+    background-color:  rgb(255, 210, 112);
+}
+.pythoncard{
+    background-color: rgb(2, 9, 73) ;
+}
+.javacard{
+    background-color: rgb(2, 32, 52);
+}
+.canvacard{
+    background-color: rgb(27, 224, 165);
+}
+pre{
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    color: aliceblue;
+    opacity: 0;
+
+}
+.hover-image{
+    position: absolute;
+    height: 350px;
+    width: 300px;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 0;
+    transition: transform 0.5s,z-index 0s,left 0.5s;
+    transition-delay: 0s,0.5s,0.5s;
+    pointer-events: none;
+    
+}
+.icon-image:hover .hover-image{
+    left: -200px;
+    z-index: 7;
+    transform:  translateX(80px);
+    transition: left 0.5s,z-index 0s,transform 0.5s;
+    transition-delay: 0s,0.5s,0.5s;
+
+}
+.hover-image img{
+    border-radius: 25px;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border: 3px solid rgb(249, 242, 242);
+}
+.content{
+    position: absolute;
+    width: 100%;
+    bottom: -10px;
+    padding: 0px 10px;
+}
+.content::before{
+    content: '';
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: rgb(215, 232, 247);
+    z-index: -1;
+
+}
+.content .detail{
+    position: relative;
+    background-color: rgb(215, 232, 247);
+    padding: 10px;
+    border-radius: 12px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(10px);
+
+}
+.icon-image:hover .detail{
+    opacity: 1;
+    
+    transition: all .5s ease-out;
+    transform: translateY(4px);
+    transition-delay: 0.9s;
+}
+
+.content .detail::before{
+    content: '';
+    height: 20px;
+    width: 20px;
+    position: absolute;
+    bottom: -9px;
+    transform: translateX(-50%) rotate(45deg);
+    background-color: rgb(215, 232, 247);
+    z-index: -1;
+
+}
+.detail .name{
+    font-weight: 900;
+}
+.detail .intership{
+    color: rgb(13, 183, 183);
+}
+.last:hover .detail{
+    transition-delay: 0s;
+}
+.last:hover .hover-image{
+    transition: none;
+}
+.last .hover-image{
+    transition: none;
+}
